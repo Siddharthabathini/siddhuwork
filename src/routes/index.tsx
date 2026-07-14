@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
   component: Portfolio,
 });
 
-const RESUME_URL = "https://drive.google.com/file/d/your-resume-id/view";
+const RESUME_URL = "https://drive.google.com/file/d/1b1FEB_QzO5720ulRrDAem0UEM-RJcFgp/view?usp=drive_link";
 const EMAIL = "siddharthabathini4@gmail.com";
 const PHONE = "+91 9030633182";
 
