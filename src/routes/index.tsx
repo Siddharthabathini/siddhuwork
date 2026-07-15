@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_jvflpka";
+const EMAILJS_TEMPLATE_ID = "template_4ioxbhg";
+const EMAILJS_PUBLIC_KEY = "VnjDnIqC5iVSZRKG3";
 import {
   ArrowUp,
   Download,
@@ -276,15 +281,45 @@ function Portfolio() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleContact = (e: FormEvent<HTMLFormElement>) => {
+  const [sending, setSending] = useState(false);
+  const [contactStatus, setContactStatus] = useState<
+    { type: "success" | "error"; message: string } | null
+  >(null);
+
+  const handleContact = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const subject = encodeURIComponent(String(data.get("subject") || "Portfolio Inquiry"));
-    const body = encodeURIComponent(
-      `Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`,
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    setSending(true);
+    setContactStatus(null);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: String(data.get("name") || ""),
+          email: String(data.get("email") || ""),
+          subject: String(data.get("subject") || "Portfolio Inquiry"),
+          message: String(data.get("message") || ""),
+          to_email: EMAIL,
+          reply_to: String(data.get("email") || ""),
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      );
+      setContactStatus({
+        type: "success",
+        message: "Thanks! Your message has been sent. I'll get back to you soon.",
+      });
+      form.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setContactStatus({
+        type: "error",
+        message: "Something went wrong. Please try again or email me directly.",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -754,10 +789,21 @@ function Portfolio() {
               </div>
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full gradient-bg px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02]"
+                disabled={sending}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full gradient-bg px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
               >
-                <Send className="h-4 w-4" /> Send Message
+                <Send className="h-4 w-4" /> {sending ? "Sending..." : "Send Message"}
               </button>
+              {contactStatus && (
+                <p
+                  role="status"
+                  className={`text-sm ${
+                    contactStatus.type === "success" ? "text-success" : "text-destructive"
+                  }`}
+                >
+                  {contactStatus.message}
+                </p>
+              )}
             </form>
           </div>
         </Section>
