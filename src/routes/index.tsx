@@ -789,10 +789,21 @@ function Portfolio() {
               </div>
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full gradient-bg px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02]"
+                disabled={sending}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full gradient-bg px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
               >
-                <Send className="h-4 w-4" /> Send Message
+                <Send className="h-4 w-4" /> {sending ? "Sending..." : "Send Message"}
               </button>
+              {contactStatus && (
+                <p
+                  role="status"
+                  className={`text-sm ${
+                    contactStatus.type === "success" ? "text-success" : "text-destructive"
+                  }`}
+                >
+                  {contactStatus.message}
+                </p>
+              )}
             </form>
           </div>
         </Section>
