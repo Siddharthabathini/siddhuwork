@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_jvflpka";
+const EMAILJS_TEMPLATE_ID = "template_4ioxbhg";
+const EMAILJS_PUBLIC_KEY = "VnjDnIqC5iVSZRKG3";
 import {
   ArrowUp,
   Download,
