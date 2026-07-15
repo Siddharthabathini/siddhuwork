@@ -30,7 +30,8 @@ import {
   BookOpen,
   Wrench,
 } from "lucide-react";
-import profileImg from "@/assets/siddhartha-profile.jpg";
+import profileAsset from "@/assets/siddhartha-profile.png.asset.json";
+const profileImg = profileAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
