@@ -84,14 +84,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Portfolio of Siddhartha Bathini — B.Tech student & aspiring software engineer specializing in Salesforce, AI, Cloud Computing and Cybersecurity.",
       },
       { name: "author", content: "Siddhartha Bathini" },
-      { property: "og:title", content: "Siddhartha Bathini — Software Developer Portfolio" },
+      { property: "og:title", content: "Siddhartha Bathini — Software Developer & Salesforce Enthusiast" },
       {
         property: "og:description",
         content:
-          "Aspiring software engineer passionate about Salesforce, AI, Cloud and Cybersecurity. Open to internships and entry-level opportunities.",
+          "Portfolio of Siddhartha Bathini — B.Tech student & aspiring software engineer specializing in Salesforce, AI, Cloud Computing and Cybersecurity.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Siddhartha Bathini — Software Developer & Salesforce Enthusiast" },
+      { name: "twitter:description", content: "Portfolio of Siddhartha Bathini — B.Tech student & aspiring software engineer specializing in Salesforce, AI, Cloud Computing and Cybersecurity." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1667b421-71e5-46a8-9073-358a21b87f73/id-preview-d76d2530--fea7c8bc-1b67-4afe-82c0-0726f3ba0fc2.lovable.app-1784210897566.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1667b421-71e5-46a8-9073-358a21b87f73/id-preview-d76d2530--fea7c8bc-1b67-4afe-82c0-0726f3ba0fc2.lovable.app-1784210897566.png" },
     ],
     links: [
       {
