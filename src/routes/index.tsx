@@ -297,8 +297,9 @@ function Portfolio() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          name: String(data.get("name") || ""),
-          email: String(data.get("email") || ""),
+          to_name: "Siddhartha",
+          from_name: String(data.get("name") || ""),
+          from_email: String(data.get("email") || ""),
           subject: String(data.get("subject") || "Portfolio Inquiry"),
           message: String(data.get("message") || ""),
           to_email: EMAIL,
