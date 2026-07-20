@@ -73,7 +73,7 @@ const CERTS = [
   { title: "Cyber Security Internship", org: "Supraja Technologies", icon: ShieldCheck },
   { title: "Cloud Computing Fundamentals", org: "Online", icon: Cloud },
   { title: "Secure Coding Practices", org: "Online", icon: ShieldCheck },
-  { title: "Data Analysis Job Simulation", org: "Deloitte", icon: Database },
+  { title: "Data Analytics Job Simulation", org: "Deloitte", icon: Database },
 ];
 
 const SKILL_GROUPS = [
