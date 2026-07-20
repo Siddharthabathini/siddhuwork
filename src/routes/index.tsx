@@ -59,7 +59,7 @@ const NAV = [
 
 const STATS = [
   { value: 10, suffix: "+", label: "Projects Built" },
-  { value: 8, suffix: "+", label: "Certifications" },
+  { value: 9, suffix: "+", label: "Certifications" },
   { value: 25, suffix: "+", label: "Technical Skills" },
   { value: 3, suffix: "", label: "Years Learning" },
 ];
@@ -73,6 +73,7 @@ const CERTS = [
   { title: "Cyber Security Internship", org: "Supraja Technologies", icon: ShieldCheck },
   { title: "Cloud Computing Fundamentals", org: "Online", icon: Cloud },
   { title: "Secure Coding Practices", org: "Online", icon: ShieldCheck },
+  { title: "Data Analysis Job Simulation", org: "Deloitte", icon: Database },
 ];
 
 const SKILL_GROUPS = [
