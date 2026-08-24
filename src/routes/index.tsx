@@ -59,7 +59,7 @@ const NAV = [
 
 const STATS = [
   { value: 10, suffix: "+", label: "Projects Built" },
-  { value: 9, suffix: "+", label: "Certifications" },
+  { value: 10, suffix: "+", label: "Certifications" },
   { value: 25, suffix: "+", label: "Technical Skills" },
   { value: 3, suffix: "", label: "Years Learning" },
 ];
@@ -74,6 +74,7 @@ const CERTS = [
   { title: "Cloud Computing Fundamentals", org: "Online", icon: Cloud },
   { title: "Secure Coding Practices", org: "Online", icon: ShieldCheck },
   { title: "Data Analytics Job Simulation", org: "Deloitte", icon: Database },
+  { title: "AICTE | IBM SkillsBuild Academic Internship - Data Analytics with AI", org: "IBM SkillsBuild", icon: Database },
 ];
 
 const SKILL_GROUPS = [
